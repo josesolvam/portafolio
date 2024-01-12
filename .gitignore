@@ -1,0 +1,6 @@
+composer.phar
+/.idea/
+.DS_Store
+
+# Personalizados
+ignored

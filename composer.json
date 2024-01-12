@@ -1,0 +1,30 @@
+{
+  "name": "joseramon/portafolio",
+  "description": "Simulación de portafolio como programador web con php",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Jose Ramon",
+      "email": "joseramon.heredia@solvam.es"
+    }
+  ],
+  "require": {
+    "phpmailer/phpmailer": "^6.3",
+    "ext-json": "*",
+    "ext-mysqli": "*",
+    "vlucas/phpdotenv": "^5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Routers\\": "./routers",
+      "Controllers\\": "./controllers",
+      "Models\\": "./models",
+      "Helpers\\": "./helpers"
+    },
+    "files": [
+      "./helpers/funciones.php",
+      "./helpers/responses.php",
+      "./helpers/imagenes.php"
+    ]
+  }
+}
