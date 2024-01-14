@@ -3,11 +3,28 @@ declare(strict_types=1);
 
 require_once __DIR__ . "/../../vendor/autoload.php";
 require_once "./insert-usuario.php";
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../../config");
+$dotenv->safeLoad();
 
 function conectarDB(): mysqli|bool
 {
+    $dbHost = "";
+    $dbUser = "";
+    $dbPass = "";
+    $dbTable = "";
+    switch ($_ENV["MODE"]) {
+        case "dev":
+            $dbHost = $_ENV["DEV_DB_HOST"];
+            $dbUser = $_ENV["DEV_DB_USER"];
+            $dbPass = $_ENV["DEV_DB_PASSWORD"];
+            break;
+        default:
+            $dbHost = $_ENV["PROD_DB_HOST"];
+            $dbUser = $_ENV["PROD_DB_USER"];
+            $dbPass = $_ENV["PROD_DB_PASSWORD"];
+    }
   try {
-    $db = new mysqli("localhost", "root", "");
+    $db = new mysqli($dbHost, $dbUser, $dbPass);
     $db->query("SET NAMES 'utf8'");
     if ($db->connect_error) {
       return false;
