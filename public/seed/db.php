@@ -11,7 +11,6 @@ function conectarDB(): mysqli|bool
     $dbHost = "";
     $dbUser = "";
     $dbPass = "";
-    $dbTable = "";
     switch ($_ENV["MODE"]) {
         case "dev":
             $dbHost = $_ENV["DEV_DB_HOST"];

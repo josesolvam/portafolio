@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `mi_portafolio`;
-USE `mi_portafolio`;
+CREATE DATABASE  IF NOT EXISTS `mi_portafolio_x1fh`;
+USE `mi_portafolio_x1fh`;
 DROP TABLE IF EXISTS `proyectos`;
 CREATE TABLE `proyectos` (
   `id` int NOT NULL AUTO_INCREMENT,
